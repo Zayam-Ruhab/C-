@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+
+double balance = 0; // Global balance for simplicity
+
+void deposit() {
+    double amount;
+    cout << "Enter amount to deposit: ";
+    cin >> amount;
+    balance += amount;
+    cout << "Deposit successful! Current balance: " << balance << endl;
+}
+
+void withdraw() {
+    double amount;
+    cout << "Enter amount to withdraw: ";
+    cin >> amount;
+    if (amount <= balance) {
+        balance -= amount;
+        cout << "Withdrawal successful! Current balance: " << balance << endl;
+    } else {
+        cout << "Insufficient balance!\n";
+    }
+}
+
+void checkBalance() {
+    cout << "Current balance: " << balance << endl;
+}
+
+int main() {
+    int choice;
+
+    do {
+        cout << "\n=== Mini Banking System ===\n";
+        cout << "1. Deposit Money\n";
+        cout << "2. Withdraw Money\n";
+        cout << "3. Check Balance\n";
+        cout << "4. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1: deposit(); break;
+            case 2: withdraw(); break;
+            case 3: checkBalance(); break;
+            case 4: cout << "Thank you for using the banking system!\n"; break;
+            default: cout << "Invalid choice!\n";
+        }
+    } while (choice != 4);
+
+    return 0;
+}
