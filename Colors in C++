@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+void customColor()
+ {
+    string userColor;
+    do
+    {
+        cout << "\n\nEnter a two-digit HEX color code in which the first one should be a number fron 0-9 abd the second one should be an alphabet from (e.g., 1E, 4F, 0A): ";
+        cin >> userColor;
+        if(userColor=="0")
+           break;
+
+        system(("Color " + userColor).c_str());   //This .c_str() is used for changing the input into a null terminated array of characters
+        cout << "Applied Color: " << userColor << endl;
+        cout << "Nice choice! Looks cool!";
+    }while(1);
+}
+
+int main()
+ {
+    cout << " COLORFUL TERMINAL DEMO IN C++" << endl;
+    cout<<"\n\nFor terminating the program after experimenting please eneter \"X\"";
+
+        customColor(); 
+
+    cout << "\n Demo finished. Thanks for using my software!" << endl;
+
+    return 0;
+}
